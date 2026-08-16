@@ -1,5 +1,4 @@
-Problem Statement: Student Database Analysis Using
-MySQL
+Problem Statement: Student Database Analysis Using MySQL
 Background
 A college wants to maintain and analyze student information using a MySQL database. The
 student database contains two related tables:
