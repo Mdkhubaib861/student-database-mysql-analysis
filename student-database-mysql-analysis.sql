@@ -175,7 +175,7 @@ INSERT INTO personal_info (sid, name, gender, dob, city) VALUES
 (98, 'Ruksana Malek', 'Female', '2006-11-09', 'Nashik'),
 (99, 'Vishal Shinde', 'Male', '2005-01-27', 'Malegaon'),
 (100, 'Snehal Patil', 'Female', '2006-08-31', 'Mumbai');
-*/
+
 INSERT INTO academic_info (roll_no, sid, class, total_marks) VALUES
 (151, 51, 'Final', 412),
 (152, 52, 'Second', 388),
@@ -230,3 +230,22 @@ INSERT INTO academic_info (roll_no, sid, class, total_marks) VALUES
 
 SELECT * FROM personal_info;
 SELECT * FROM academic_info;
+
+SELECT name, gender, city FROM personal_info;
+
+SELECT name,city FROM personal_info WHERE city = "Malegaon";
+
+SELECT * FROM personal_info 
+WHERE YEAR(dob) = 2006;
+
+SELECT * FROM personal_info
+ WHERE gender = "Female";
+ 
+ SELECT * FROM personal_info WHERE
+ city IN ("Mumbai", "Pune", "Nashik");
+ 
+ SELECT * FROM personal_info WHERE 
+ gender = "Male" AND city = "Malegaon";
+ */
+ SELECT * FROM personal_info WHERE
+ gender = "Female" AND city = "Mumbai";
