@@ -228,24 +228,106 @@ INSERT INTO academic_info (roll_no, sid, class, total_marks) VALUES
 (199, 99, 'Final', 418),
 (200, 100, 'Second', 395);
 
+-- 1. Display all records from the personal_info table.
+
 SELECT * FROM personal_info;
+
+-- 2. Display all records from the academic_info table.
+
 SELECT * FROM academic_info;
+
+-- 3. Display only the student name, gender, and city.
 
 SELECT name, gender, city FROM personal_info;
 
+-- 4. Display the names of students who belong to Malegaon.
+
 SELECT name,city FROM personal_info WHERE city = "Malegaon";
+
+-- 5. Display students born in 2006.
 
 SELECT * FROM personal_info 
 WHERE YEAR(dob) = 2006;
 
+-- 6. Display all female students.
+
 SELECT * FROM personal_info
  WHERE gender = "Female";
+ 
+ -- 7. Display students from Mumbai, Pune, and Nashik.
  
  SELECT * FROM personal_info WHERE
  city IN ("Mumbai", "Pune", "Nashik");
  
+ 8. Find all male students from Malegaon.
+ 
  SELECT * FROM personal_info WHERE 
  gender = "Male" AND city = "Malegaon";
- */
+ 
+ -- 9. Find all female students from Mumbai.
+ 
  SELECT * FROM personal_info WHERE
  gender = "Female" AND city = "Mumbai";
+
+-- 10. Find students born between 2005 and 2006.
+
+ SELECT * FROM personal_info WHERE
+ YEAR(dob) BETWEEN 2005 AND 2006;
+ 
+ -- 11. Find students whose total marks are greater than 400. 
+ 
+ SELECT * FROM academic_info
+ WHERE total_marks > 400;
+ 
+ -- 12. Find students whose total marks are between 350 and 450.
+ 
+SELECT * FROM academic_info WHERE 
+total_marks BETWEEN 350 AND 450;
+
+-- 13. Find students belonging to the Final class with marks greater than 400.
+
+SELECT * FROM academic_info WHERE
+ class = "Final" AND total_marks > 400;
+
+ -- 14. Find female students from Mumbai who scored more than 400 marks.
+ 
+SELECT p.*, a.total_marks 
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+WHERE p.gender = "Female" AND p.city = "Mumbai" AND a.total_marks > 400;
+
+-- 15. Find the total number of students.
+SELECT count(*) AS TOTAL_STUDENT
+ FROM personal_info;
+ 
+--  16.  Find the total number of male and female students.
+
+SELECT gender, COUNT(*) AS count 
+FROM personal_info 
+GROUP BY gender;
+
+-- 17. Find the average marks of all students.
+SELECT AVG(Total_marks) AS AVRAGE_MARKS
+FROM academic_info
+
+-- 18. Find the highest marks obtained by any student.
+SELECT MAX(total_marks) AS highest_marks FROM academic_info;
+
+-- 19. Find the lowest marks obtained by any student.
+
+SELECT MIN(total_marks) AS lowest_marks FROM academic_info;
+
+-- 20. Find the total marks obtained by all students.
+SELECT SUM(total_marks) AS sum_total_marks FROM academic_info;
+
+-- 21. Find the average marks of male students.
+SELECT AVG(a.total_marks) AS avg_male_marks 
+FROM academic_info a
+JOIN personal_info p ON a.sid = p.sid
+WHERE p.gender = "Male";
+*/
+-- 22. Find the average marks of female students.
+SELECT AVG(a.total_marks) AS avg_female_marks 
+FROM academic_info a
+JOIN personal_info p ON a.sid = p.sid
+WHERE p.gender = "Female";
