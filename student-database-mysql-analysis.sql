@@ -228,6 +228,8 @@ INSERT INTO academic_info (roll_no, sid, class, total_marks) VALUES
 (199, 99, 'Final', 418),
 (200, 100, 'Second', 395);
 
+-- Part A – Basic Data Retrieval
+
 -- 1. Display all records from the personal_info table.
 
 SELECT * FROM personal_info;
@@ -258,6 +260,8 @@ SELECT * FROM personal_info
  
  SELECT * FROM personal_info WHERE
  city IN ("Mumbai", "Pune", "Nashik");
+ 
+-- Part B – WHERE Clause
  
  8. Find all male students from Malegaon.
  
@@ -295,6 +299,8 @@ SELECT p.*, a.total_marks
 FROM personal_info p
 JOIN academic_info a ON p.sid = a.sid
 WHERE p.gender = "Female" AND p.city = "Mumbai" AND a.total_marks > 400;
+
+-- Part C – Aggregate Functions
 
 -- 15. Find the total number of students.
 SELECT count(*) AS TOTAL_STUDENT
@@ -403,4 +409,72 @@ SELECT gender, COUNT(*) AS student_count
 FROM personal_info 
 GROUP BY gender 
 HAVING COUNT(*) > 40;
+
+-- 36. Display student name, gender, city, class, roll number, and total marks.
+SELECT p.name, p.gender, p.city, a.class, a.roll_no, a.total_marks 
+FROM personal_info p 
+JOIN academic_info a ON p.sid = a.sid;
+
+-- 37. Display all female students along with their academic information.
+SELECT p.*, a.roll_no, a.class, a.total_marks 
+FROM personal_info p 
+JOIN academic_info a ON p.sid = a.sid 
+WHERE p.gender = "Female";
+
+-- 38. Display students from Malegaon along with their marks.
+SELECT p.name, p.city, a.total_marks 
+FROM personal_info p 
+JOIN academic_info a ON p.sid = a.sid 
+WHERE p.city = "Malegaon";
+
+-- 39. Display students who scored more than 400 marks along with their personal details.
+SELECT p.*, a.total_marks 
+FROM personal_info p 
+JOIN academic_info a ON p.sid = a.sid 
+WHERE a.total_marks > 400;
+
+-- 40. Display the names and marks of students from Mumbai.
+SELECT p.name, a.total_marks 
+FROM personal_info p 
+JOIN academic_info a ON p.sid = a.sid 
+WHERE p.city = "Mumbai";
+
+-- 41. Display student name, city, class, and marks for students from Pune.
+SELECT p.name, p.city, a.class, a.total_marks 
+FROM personal_info p 
+JOIN academic_info a ON p.sid = a.sid 
+WHERE p.city = "Pune";
+
+-- 42. Display students whose marks are between 350 and 450 along with their personal information.
+SELECT p.*, a.total_marks 
+FROM personal_info p 
+JOIN academic_info a ON p.sid = a.sid 
+WHERE a.total_marks BETWEEN 350 AND 450;
+
+-- 43. Use a LEFT JOIN to display all students from personal_info along with their academic information.
+SELECT * FROM personal_info p 
+LEFT JOIN academic_info a 
+ON p.sid = a.sid;
+
+-- 44. Display all students from the personal information table, even if academic information is not available.
+SELECT p.*, a.roll_no, a.class, a.total_marks 
+FROM personal_info p 
+LEFT JOIN academic_info a 
+ON p.sid = a.sid;
+
+-- 45. Find students who do not have matching academic records.
+SELECT p.* FROM personal_info p 
+LEFT JOIN academic_info a ON p.sid = a.sid 
+WHERE a.sid IS NULL;
+
+-- 46. Use a RIGHT JOIN to display all academic records along with the corresponding student information.
+SELECT a.*, p.name, p.gender, p.dob, p.city 
+FROM personal_info p 
+RIGHT JOIN academic_info a 
+ON p.sid = a.sid;
 */
+-- 47. Find academic records for which matching personal information is not available.
+SELECT a.* 
+FROM personal_info p 
+RIGHT JOIN academic_info a ON p.sid = a.sid 
+WHERE p.sid IS NULL;
