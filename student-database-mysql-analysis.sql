@@ -325,9 +325,82 @@ SELECT AVG(a.total_marks) AS avg_male_marks
 FROM academic_info a
 JOIN personal_info p ON a.sid = p.sid
 WHERE p.gender = "Male";
-*/
+
 -- 22. Find the average marks of female students.
 SELECT AVG(a.total_marks) AS avg_female_marks 
 FROM academic_info a
 JOIN personal_info p ON a.sid = p.sid
 WHERE p.gender = "Female";
+
+-- 23. Count the number of students in each city.
+SELECT city, COUNT(*) AS student_count 
+FROM personal_info 
+GROUP BY city;
+
+-- 24. Count the number of male and female students.
+SELECT gender, COUNT(*) AS student_count 
+FROM personal_info 
+GROUP BY gender;
+
+-- 25. Count students according to their year of birth.
+SELECT YEAR(dob) AS birth_year, COUNT(*) AS student_count 
+FROM personal_info 
+GROUP BY YEAR(dob);
+
+-- 26. Find the average marks for each class.
+SELECT class AS AVRAGE, avg(TOTAL_marks) AS student_count 
+FROM academic_info 
+GROUP BY class;
+
+-- 27. Find the highest marks in each class.
+SELECT class AS maximum, max(TOTAL_marks) AS student_count 
+FROM academic_info 
+GROUP BY class;
+
+-- 28. Find the lowest marks in each class.
+SELECT class AS minimum, MIN(TOTAL_marks) AS student_count 
+FROM academic_info 
+GROUP BY class;
+
+-- 29. Find the number of students in each class.
+SELECT class AS count, count(*) AS student_count 
+FROM academic_info 
+GROUP BY class;
+
+-- 30. Find the average marks for each city.
+SELECT p.city, AVG(a.total_marks) AS avg_marks 
+FROM academic_info a
+JOIN personal_info p ON a.sid = p.sid
+group by city;
+
+-- 31. Display only those cities having more than 10 students.
+SELECT city, COUNT(*) AS student_count 
+FROM personal_info 
+GROUP BY city 
+HAVING COUNT(*) > 10;
+
+-- 32. Display classes having an average score greater than 400.
+SELECT class, AVG(total_marks) AS avg_marks 
+FROM academic_info 
+GROUP BY class 
+HAVING AVG(total_marks) > 400;
+
+-- 33. Display years of birth having more than 30 students.
+SELECT YEAR(dob) AS birth_year, COUNT(*) AS student_count 
+FROM personal_info 
+GROUP BY YEAR(dob) 
+HAVING COUNT(*) > 30;
+
+-- 34. Display cities where the average marks are greater than 400.
+SELECT p.city, AVG(a.total_marks) AS avg_marks 
+FROM personal_info p 
+JOIN academic_info a ON p.sid = a.sid 
+GROUP BY p.city 
+HAVING AVG(a.total_marks) > 400;
+
+-- 35. Display gender groups having more than 40 students.
+SELECT gender, COUNT(*) AS student_count 
+FROM personal_info 
+GROUP BY gender 
+HAVING COUNT(*) > 40;
+*/
