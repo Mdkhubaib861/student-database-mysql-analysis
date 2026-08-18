@@ -472,9 +472,42 @@ SELECT a.*, p.name, p.gender, p.dob, p.city
 FROM personal_info p 
 RIGHT JOIN academic_info a 
 ON p.sid = a.sid;
-*/
+
 -- 47. Find academic records for which matching personal information is not available.
 SELECT a.* 
 FROM personal_info p 
 RIGHT JOIN academic_info a ON p.sid = a.sid 
 WHERE p.sid IS NULL;
+
+-- 49. Display student Roll number, total marks, and grade.
+SELECT roll_no, total_marks,
+CASE
+	WHEN total_marks >= 450 THEN "EXECELLNT"
+    WHEN total_marks >= 400 THEN "VERY GOOD"
+    WHEN total_marks >= 350 THEN "GOOD"
+    ELSE "NOT QULIFIED"
+END AS REMARK
+FROM academic_info;
+
+-- 50. Count how many students belong to each grade.
+SELECT 
+    CASE
+        WHEN total_marks >= 450 THEN 'EXCELLENT'
+        WHEN total_marks >= 400 THEN 'VERY GOOD'
+        WHEN total_marks >= 350 THEN 'GOOD'
+        ELSE 'NOT QUALIFIED'
+    END AS REMARK,
+    COUNT(*) AS student_count
+FROM academic_info
+GROUP BY REMARK;
+*/
+SELECT 
+    CASE
+        WHEN total_marks >= 450 THEN 'EXCELLENT'
+        WHEN total_marks >= 400 THEN 'VERY GOOD'
+        WHEN total_marks >= 350 THEN 'GOOD'
+        ELSE 'NOT QUALIFIED'
+    END AS REMARK,
+    COUNT(*) AS student_count
+FROM academic_info
+GROUP BY REMARK;
