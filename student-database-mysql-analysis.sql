@@ -633,4 +633,70 @@ SELECT p.name,
 FROM personal_info p
 JOIN academic_info a ON p.sid = a.sid
 WHERE p.city = "Nashik";
+
+-- 62. Find female students from Mumbai and show the number of students in each performance grade.
+SELECT 
+    CASE 
+        WHEN a.total_marks >= 400 THEN "Distinction"
+        WHEN a.total_marks >= 350 THEN "First Class"
+        ELSE "Second Class"
+    END AS performance_grade,
+    COUNT(*) AS student_count
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+WHERE p.gender = "Female" AND p.city = "Mumbai"
+GROUP BY performance_grade;
+
+-- Part L – JOIN + GROUP BY + Aggregation
+
+-- 63. Find the average marks of male and female students.
+
+SELECT p.gender, AVG(a.total_marks) AS avg_marks
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+GROUP BY p.gender;
+
+-- 64. Find the average marks of students in each city.
+SELECT p.city, AVG(a.total_marks) AS avg_marks
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+GROUP BY p.city;
+
+-- 65. Find the number of students in each city and gender combination.
+SELECT p.city, p.gender, COUNT(*) AS student_count
+FROM personal_info p
+GROUP BY p.city, p.gender
+ORDER BY p.city, p.gender;
+
+-- 66. Find the average marks for each class and gender.
+SELECT a.class, p.gender, AVG(a.total_marks) AS avg_marks
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+GROUP BY a.class, p.gender;
+
+-- 67. Find the highest marks obtained by male and female students in each city.
+SELECT p.city, p.gender, MAX(a.total_marks) AS max_marks
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+GROUP BY p.city, p.gender;
+
+-- 68. Find the number of students in each city who scored more than 400 marks.
+SELECT p.city, COUNT(*) AS student_count
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+WHERE a.total_marks > 400
+GROUP BY p.city;
+
+-- 69. Find the number of students in each performance grade for every city.
+SELECT p.city,
+    CASE 
+        WHEN a.total_marks >= 400 THEN 'Distinction'
+        WHEN a.total_marks >= 350 THEN 'First Class'
+        ELSE 'Second Class'
+    END AS performance_grade,
+    COUNT(*) AS student_count
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+GROUP BY p.city, performance_grade
+ORDER BY p.city, performance_grade;
 */
