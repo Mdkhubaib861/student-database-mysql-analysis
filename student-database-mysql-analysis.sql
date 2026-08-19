@@ -500,7 +500,8 @@ SELECT
     COUNT(*) AS student_count
 FROM academic_info
 GROUP BY REMARK;
-*/
+
+-- 50. Count how many students belong to each grade.
 SELECT 
     CASE
         WHEN total_marks >= 450 THEN 'EXCELLENT'
@@ -511,3 +512,125 @@ SELECT
     COUNT(*) AS student_count
 FROM academic_info
 GROUP BY REMARK;
+
+-- 51. Find the number of female students in each grade.
+SELECT a.class, COUNT(*) AS male_count
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+WHERE p.gender = "Female"
+GROUP BY a.class;
+
+
+-- 52. Find the number of male students in each grade.
+SELECT a.class, COUNT(*) AS male_count
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+WHERE p.gender = "Male"
+GROUP BY a.class;
+
+-- 53. Display students with their grade and city.
+SELECT p.name, a.class, p.city
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid;
+
+-- Part J – CASE with Year of Birth
+
+-- 54. Display student name, date of birth, year of birth, and status.
+SELECT name, dob, YEAR(dob) AS year_of_birth,
+    CASE YEAR(dob)
+        WHEN 2005 THEN "Fresh"
+        WHEN 2006 THEN "Repeater"
+        ELSE "X Repeater"
+    END AS status
+FROM personal_info;
+
+-- 55. Count students in each status category.
+SELECT 
+    CASE YEAR(dob)
+        WHEN 2005 THEN "Fresh"
+        WHEN 2006 THEN "Repeater"
+        ELSE "X Repeater"
+    END AS status,
+    COUNT(*) AS student_count
+FROM personal_info
+GROUP BY status;
+
+-- 56. Find the number of Fresh, Repeater, and X Repeater students in each city.
+SELECT p.city,
+    CASE YEAR(p.dob)
+        WHEN 2005 THEN 'Fresh'
+        WHEN 2006 THEN 'Repeater'
+        ELSE 'X Repeater'
+    END AS status,
+    COUNT(*) AS city_count
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+GROUP BY p.city, 
+    CASE YEAR(p.dob)
+        WHEN 2005 THEN 'Fresh'
+        WHEN 2006 THEN 'Repeater'
+        ELSE 'X Repeater'
+    END;
+
+-- 57. Find the average marks of each status category.
+SELECT 
+    CASE YEAR(p.dob)
+        WHEN 2005 THEN "Fresh"
+        WHEN 2006 THEN "Repeater"
+        ELSE "X Repeater"
+    END AS status,
+    AVG(a.total_marks) AS average_marks
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+GROUP BY status;
+
+-- Part K – JOIN + WHERE + CASE
+-- 58. Display the names of female students from Mumbai and classify them according to their marks.
+
+SELECT p.name, a.total_marks,
+    CASE 
+        WHEN a.total_marks >= 450 THEN "Distinction"
+        WHEN a.total_marks >= 400 THEN "First Class"
+        ELSE "Second Class"
+    END AS performance_grade
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+WHERE p.gender = "Female" AND p.city = "Mumbai";
+
+-- 59. Display male students from Malegaon who scored more than 400 marks and show their performance grade.
+SELECT p.name, a.total_marks,
+    CASE 
+        WHEN a.total_marks >= 450 THEN "Outstanding"
+        ELSE "Distinction"
+    END AS performance_grade
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+WHERE p.gender = "Male" AND p.city = "Malegaon" AND a.total_marks > 400;
+
+
+-- 60. Display Male students from Pune with their class, marks, and performance grade.
+SELECT p.name, a.class, a.total_marks,
+    CASE 
+        WHEN a.total_marks >= 400 THEN "Distinction"
+        ELSE "Pass"
+    END AS performance_grade
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+WHERE p.gender = "Male" AND p.city = "Pune";
+
+-- 61. Display students from Nashik with their year-of-birth status and academic grade.
+SELECT p.name,
+    CASE YEAR(p.dob)
+        WHEN 2005 THEN 'Fresh'
+        WHEN 2006 THEN 'Repeater'
+        ELSE 'X Repeater'
+    END AS yob_status,
+    CASE 
+        WHEN a.total_marks >= 400 THEN "A"
+        WHEN a.total_marks >= 350 THEN "B"
+        ELSE "C"
+    END AS academic_grade
+FROM personal_info p
+JOIN academic_info a ON p.sid = a.sid
+WHERE p.city = "Nashik";
+*/
