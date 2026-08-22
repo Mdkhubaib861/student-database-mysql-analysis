@@ -1,8 +1,10 @@
 Problem Statement: Student Database Analysis Using
 MySQL
+
 Background
-A college wants to maintain and analyze student information using a MySQL database. The
-student database contains two related tables:
+
+A college wants to maintain and analyze student information using a MySQL database.
+The student database contains two related tables:
 1. personal_info – stores personal details such as student ID, name, gender, date of
 birth, and city.
 2. academic_info – stores academic details such as roll number, student ID, class, and
@@ -130,6 +132,7 @@ average above 400.
 79. Display cities having more than 5 students with marks above 400.
 80. Find the number of female students from Mumbai in each grade and display only
 grades having at least 2 students.
+
 Final Challenge
 Create a single SQL report that displays:
 • Student ID
