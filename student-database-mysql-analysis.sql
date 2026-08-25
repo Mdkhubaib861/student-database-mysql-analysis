@@ -794,7 +794,6 @@ JOIN academic_info a ON p.sid = a.sid
 WHERE a.total_marks > 400
 GROUP BY p.city
 HAVING COUNT(p.sid) > 5;
-*/
 
 
 -- 80. Find the number of female students from Mumbai in each grade and display only grades having at least 2 students.
@@ -811,3 +810,4 @@ ON p.sid = a.sid
 WHERE p.gender = "Female" AND p.city = "Mumbai"
 GROUP BY grade
 HAVING COUNT(*) >= 2;
+*/
