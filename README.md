@@ -46,7 +46,6 @@ Part C – Aggregate Functions
 23. Find the average marks of male students.
 24. Find the average marks of female students.
 Part D – GROUP BY
-
 26. Count the number of students in each city.
 27. Count the number of male and female students.
 28. Count students according to their year of birth.
@@ -56,14 +55,12 @@ Part D – GROUP BY
 32. Find the number of students in each class.
 33. Find the average marks for each city.
 Part E – HAVING Clause
-
 35. Display only those cities having more than 10 students.
 36. Display classes having an average score greater than 400.
 37. Display years of birth having more than 30 students.
 38. Display cities where the average marks are greater than 400.
 39. Display gender groups having more than 40 students.
 Part F – INNER JOIN
-
 Use sid as the common field between personal_info and academic_info.
 41. Display student name, gender, city, class, roll number, and total marks.
 42. Display all female students along with their academic information.
