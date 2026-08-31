@@ -17,6 +17,7 @@ grouping, and classification.
 Objective
 Write SQL queries to analyze the student database and answer the following business
 questions.
+
 Part A – Basic Data Retrieval
 
 1. Display all records from the personal_info table.
@@ -26,6 +27,7 @@ Part A – Basic Data Retrieval
 5. Display students born in 2006.
 6. Display all female students.
 7. Display students from Mumbai, Pune, and Nashik.
+
 Part B – WHERE Clause
 
 9. Find all male students from Malegaon.
@@ -35,6 +37,7 @@ Part B – WHERE Clause
 13. Find students whose total marks are between 350 and 450.
 14. Find students belonging to the Final class with marks greater than 400.
 15. Find female students from Malegaon who scored more than 400 marks.
+
 Part C – Aggregate Functions
 
 17. Find the total number of students.
@@ -45,7 +48,9 @@ Part C – Aggregate Functions
 22. Find the total marks obtained by all students.
 23. Find the average marks of male students.
 24. Find the average marks of female students.
+
 Part D – GROUP BY
+
 26. Count the number of students in each city.
 27. Count the number of male and female students.
 28. Count students according to their year of birth.
