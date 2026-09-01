@@ -59,7 +59,9 @@ Part D – GROUP BY
 31. Find the lowest marks in each class.
 32. Find the number of students in each class.
 33. Find the average marks for each city.
+    
 Part E – HAVING Clause
+
 35. Display only those cities having more than 10 students.
 36. Display classes having an average score greater than 400.
 37. Display years of birth having more than 30 students.
