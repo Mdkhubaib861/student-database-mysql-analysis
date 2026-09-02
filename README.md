@@ -67,7 +67,9 @@ Part E – HAVING Clause
 37. Display years of birth having more than 30 students.
 38. Display cities where the average marks are greater than 400.
 39. Display gender groups having more than 40 students.
+    
 Part F – INNER JOIN
+
 Use sid as the common field between personal_info and academic_info.
 41. Display student name, gender, city, class, roll number, and total marks.
 42. Display all female students along with their academic information.
