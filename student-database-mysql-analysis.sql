@@ -811,4 +811,7 @@ WHERE p.gender = "Female" AND p.city = "Mumbai"
 GROUP BY grade
 HAVING COUNT(*) >= 2;
 
+SELECT p.name, a.class, a.total_marks 
+FROM personal_info p
+LEFT JOIN academic_info a ON p.sid = a.sid;
 */
