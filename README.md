@@ -79,71 +79,79 @@ Use sid as the common field between personal_info and academic_info.
 46. Display student name, city, class, and marks for students from Pune.
 47. Display students whose marks are between 350 and 450 along with their personal
 information.
+
 Part G – LEFT JOIN
+
 48. Use a LEFT JOIN to display all students from personal_info along with their
 academic information.
 49. Display all students from the personal information table, even if academic
 information is not available.
 50. Find students who do not have matching academic records.
+
 Part H – RIGHT JOIN
-51. Use a RIGHT JOIN to display all academic records along with the corresponding
+
+52. Use a RIGHT JOIN to display all academic records along with the corresponding
 student information.
-52. Find academic records for which matching personal information is not available.
+53. Find academic records for which matching personal information is not available.
+
 Part I – CASE Statement
+
 Use a CASE statement to classify students according to their marks.
-53. Create a performance category using the following rules:
+55. Create a performance category using the following rules:
 Marks Grade
 450 and above A
 400–449 B
 350–399 C
 Below 350 D
-54. Display student name, total marks, and grade.
-55. Count how many students belong to each grade.
-56. Find the number of female students in each grade.
-57. Find the number of male students in each grade.
-58. Display students with their grade and city.
+56. Display student name, total marks, and grade.
+57. Count how many students belong to each grade.
+58. Find the number of female students in each grade.
+59. Find the number of male students in each grade.
+60. Display students with their grade and city.
+
 Part J – CASE with Year of Birth
+
 Classify students according to their year of birth:
 Year of Birth Status
 2005 Fresh
 2006 Repeater
 2007 X Repeater
-59. Display student name, date of birth, year of birth, and status.
-60. Count students in each status category.
-61. Find the number of Fresh, Repeater, and X Repeater students in each city.
-62. Find the average marks of each status category.
+61. Display student name, date of birth, year of birth, and status.
+62. Count students in each status category.
+63. Find the number of Fresh, Repeater, and X Repeater students in each city.
+64. Find the average marks of each status category.
 Part K – JOIN + WHERE + CASE
-63. Display the names of female students from Mumbai and classify them according to
+65. Display the names of female students from Mumbai and classify them according to
 their marks.
-64. Display male students from Malegaon who scored more than 400 marks and show
+66. Display male students from Malegaon who scored more than 400 marks and show
 their performance grade.
-65. Display female students from Pune with their class, marks, and performance grade.
-66. Display students from Nashik with their year-of-birth status and academic grade.
-67. Find female students from Mumbai and show the number of students in each
+67. Display female students from Pune with their class, marks, and performance grade.
+68. Display students from Nashik with their year-of-birth status and academic grade.
+69. Find female students from Mumbai and show the number of students in each
 performance grade.
 Part L – JOIN + GROUP BY + Aggregation
-68. Find the average marks of male and female students.
-69. Find the average marks of students in each city.
-70. Find the number of students in each city and gender combination.
-71. Find the average marks for each class and gender.
-72. Find the highest marks obtained by male and female students in each city.
-73. Find the number of students in each city who scored more than 400 marks.
-74. Find the number of students in each performance grade for every city.
+70. Find the average marks of male and female students.
+71. Find the average marks of students in each city.
+72. Find the number of students in each city and gender combination.
+73. Find the average marks for each class and gender.
+74. Find the highest marks obtained by male and female students in each city.
+75. Find the number of students in each city who scored more than 400 marks.
+76. Find the number of students in each performance grade for every city.
 Part M – Advanced Combined Queries
 Write SQL queries that combine JOIN, WHERE, GROUP BY, HAVING, aggregate functions,
 and CASE statements.
-75. Find the number of female students from Mumbai in each performance grade.
-76. Find the average marks of students from each city and display only cities with an
+77. Find the number of female students from Mumbai in each performance grade.
+78. Find the average marks of students from each city and display only cities with an
 average above 400.
-77. Find the number of students from each city who scored 450 or more.
-78. Find the average marks of Fresh, Repeater, and X Repeater students.
-79. Find the number of students by city, gender, and performance grade.
-80. Find the city with the highest average student marks.
-81. Find the class with the highest average marks.
-82. Find the number of students in each class who obtained Grade A.
-83. Find the average marks of male and female students separately for each class.
-84. Display cities having more than 5 students with marks above 400.
-85. Find the number of female students from Mumbai in each grade and display only
+79. Find the number of students from each city who scored 450 or more.
+80. Find the average marks of Fresh, Repeater, and X Repeater students.
+81. Find the number of students by city, gender, and performance grade.
+82. Find the city with the highest average student marks.
+83. Find the class with the highest average marks.
+84. Find the number of students in each class who obtained Grade A.
+85. Find the average marks of male and female students separately for each class.
+86. Display cities having more than 5 students with marks above 400.
+87. Find the number of female students from Mumbai in each grade and display only
 grades having at least 2 students.
 
 Final Challenge
