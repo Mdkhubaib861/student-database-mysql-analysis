@@ -120,7 +120,9 @@ Year of Birth Status
 62. Count students in each status category.
 63. Find the number of Fresh, Repeater, and X Repeater students in each city.
 64. Find the average marks of each status category.
+
 Part K – JOIN + WHERE + CASE
+
 65. Display the names of female students from Mumbai and classify them according to
 their marks.
 66. Display male students from Malegaon who scored more than 400 marks and show
@@ -129,29 +131,31 @@ their performance grade.
 68. Display students from Nashik with their year-of-birth status and academic grade.
 69. Find female students from Mumbai and show the number of students in each
 performance grade.
+
 Part L – JOIN + GROUP BY + Aggregation
-70. Find the average marks of male and female students.
-71. Find the average marks of students in each city.
-72. Find the number of students in each city and gender combination.
-73. Find the average marks for each class and gender.
-74. Find the highest marks obtained by male and female students in each city.
-75. Find the number of students in each city who scored more than 400 marks.
-76. Find the number of students in each performance grade for every city.
+
+71. Find the average marks of male and female students.
+72. Find the average marks of students in each city.
+73. Find the number of students in each city and gender combination.
+74. Find the average marks for each class and gender.
+75. Find the highest marks obtained by male and female students in each city.
+76. Find the number of students in each city who scored more than 400 marks.
+77. Find the number of students in each performance grade for every city.
 Part M – Advanced Combined Queries
 Write SQL queries that combine JOIN, WHERE, GROUP BY, HAVING, aggregate functions,
 and CASE statements.
-77. Find the number of female students from Mumbai in each performance grade.
-78. Find the average marks of students from each city and display only cities with an
+78. Find the number of female students from Mumbai in each performance grade.
+79. Find the average marks of students from each city and display only cities with an
 average above 400.
-79. Find the number of students from each city who scored 450 or more.
-80. Find the average marks of Fresh, Repeater, and X Repeater students.
-81. Find the number of students by city, gender, and performance grade.
-82. Find the city with the highest average student marks.
-83. Find the class with the highest average marks.
-84. Find the number of students in each class who obtained Grade A.
-85. Find the average marks of male and female students separately for each class.
-86. Display cities having more than 5 students with marks above 400.
-87. Find the number of female students from Mumbai in each grade and display only
+80. Find the number of students from each city who scored 450 or more.
+81. Find the average marks of Fresh, Repeater, and X Repeater students.
+82. Find the number of students by city, gender, and performance grade.
+83. Find the city with the highest average student marks.
+84. Find the class with the highest average marks.
+85. Find the number of students in each class who obtained Grade A.
+86. Find the average marks of male and female students separately for each class.
+87. Display cities having more than 5 students with marks above 400.
+88. Find the number of female students from Mumbai in each grade and display only
 grades having at least 2 students.
 
 Final Challenge
