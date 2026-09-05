@@ -814,4 +814,83 @@ HAVING COUNT(*) >= 2;
 SELECT p.name, a.class, a.total_marks 
 FROM personal_info p
 LEFT JOIN academic_info a ON p.sid = a.sid;
+
+
+SELECT
+    p.sid AS "Student_ID",
+    p.name AS "Student_Name",
+    p.gender AS "Gender",
+    p.city AS "City",
+    p.dob AS "Date_of_Birth",
+
+    YEAR(p.dob) AS "Year_of_Birth",
+
+    CASE
+        WHEN YEAR(p.dob) = 2005 THEN "2005 Batch"
+        WHEN YEAR(p.dob) = 2006 THEN "2006 Batch"
+        ELSE "Other"
+    END AS "Year_of_Birth_Status",
+
+    a.roll_no AS "Roll_Number",
+    a.class AS "Class",
+
+    SUM(a.total_marks) AS "Total_Marks",
+
+    CASE
+        WHEN SUM(a.total_marks) >= 450 THEN "A+"
+        WHEN SUM(a.total_marks) >= 400 THEN "A"
+        WHEN SUM(a.total_marks) >= 350 THEN "B"
+        WHEN SUM(a.total_marks) >= 300 THEN "C"
+        ELSE "F"
+    END AS "Performance_Grade"
+FROM personal_info p
+INNER JOIN academic_info a
+    ON p.sid = a.sid
+WHERE a.total_marks >= 300
+GROUP BY p.sid,p.name,p.gender,p.city,p.dob,a.roll_no,a.class
+HAVING SUM(a.total_marks) >= 300
+ORDER BY p.sid;
+
+
+SELECT
+    p.city AS "City",
+    p.gender AS "Gender",
+    a.class AS "Class",
+
+    CASE
+        WHEN a.total_marks >= 450 THEN "A+"
+        WHEN a.total_marks >= 400 THEN "A"
+        WHEN a.total_marks >= 350 THEN "B"
+        WHEN a.total_marks >= 300 THEN "C"
+        ELSE "F"
+    END AS "Performance_Grade",
+
+    COUNT(p.sid) AS "Number_of_Students"
+
+FROM personal_info p
+
+INNER JOIN academic_info a
+    ON p.sid = a.sid
+
+WHERE a.total_marks >= 300
+
+GROUP BY
+    p.city,
+    p.gender,
+    a.class,
+    CASE
+        WHEN a.total_marks >= 450 THEN "A+"
+        WHEN a.total_marks >= 400 THEN "A"
+        WHEN a.total_marks >= 350 THEN "B"
+        WHEN a.total_marks >= 300 THEN "C"
+        ELSE "F"
+    END
+
+HAVING COUNT(p.sid) > 0
+
+ORDER BY
+    p.city,
+    p.gender,
+    a.class,
+    "Performance_Grade";
 */
