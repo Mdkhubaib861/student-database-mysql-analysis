@@ -141,21 +141,23 @@ Part L – JOIN + GROUP BY + Aggregation
 75. Find the highest marks obtained by male and female students in each city.
 76. Find the number of students in each city who scored more than 400 marks.
 77. Find the number of students in each performance grade for every city.
+    
 Part M – Advanced Combined Queries
+
 Write SQL queries that combine JOIN, WHERE, GROUP BY, HAVING, aggregate functions,
 and CASE statements.
-78. Find the number of female students from Mumbai in each performance grade.
-79. Find the average marks of students from each city and display only cities with an
+79. Find the number of female students from Mumbai in each performance grade.
+80. Find the average marks of students from each city and display only cities with an
 average above 400.
-80. Find the number of students from each city who scored 450 or more.
-81. Find the average marks of Fresh, Repeater, and X Repeater students.
-82. Find the number of students by city, gender, and performance grade.
-83. Find the city with the highest average student marks.
-84. Find the class with the highest average marks.
-85. Find the number of students in each class who obtained Grade A.
-86. Find the average marks of male and female students separately for each class.
-87. Display cities having more than 5 students with marks above 400.
-88. Find the number of female students from Mumbai in each grade and display only
+81. Find the number of students from each city who scored 450 or more.
+82. Find the average marks of Fresh, Repeater, and X Repeater students.
+83. Find the number of students by city, gender, and performance grade.
+84. Find the city with the highest average student marks.
+85. Find the class with the highest average marks.
+86. Find the number of students in each class who obtained Grade A.
+87. Find the average marks of male and female students separately for each class.
+88. Display cities having more than 5 students with marks above 400.
+89. Find the number of female students from Mumbai in each grade and display only
 grades having at least 2 students.
 
 Final Challenge
