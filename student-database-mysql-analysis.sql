@@ -894,3 +894,7 @@ ORDER BY
     a.class,
     "Performance_Grade";
 */
+
+SELECT * FROM personal_info;
+
+SELECT * FROM academic_info;
