@@ -896,5 +896,4 @@ ORDER BY
 */
 
 SELECT * FROM personal_info;
-
 SELECT * FROM academic_info;
