@@ -160,6 +160,7 @@ average above 400.
 89. Find the number of female students from Mumbai in each grade and display only
 grades having at least 2 students.
 
+
 Final Challenge
 Create a single SQL report that displays:
 • Student ID
@@ -173,6 +174,7 @@ Create a single SQL report that displays:
 • Class
 • Total Marks
 • Performance Grade
+
 The query should use:
 • INNER JOIN
 • WHERE
