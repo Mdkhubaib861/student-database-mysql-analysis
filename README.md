@@ -182,5 +182,6 @@ The query should use:
 • Aggregate functions
 • GROUP BY
 • HAVING
+
 Finally, create a summary report showing the number of students in each city, gender, class,
 and performance grade.
